@@ -1,0 +1,179 @@
+/* stylesheet for demo and examples */
+
+
+
+a{
+	color: inherit;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+
+
+
+#demo{
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+	padding: 0 30px;
+}
+
+
+#demo{ line-height: 20px; 
+       position: center;
+      top: auto;
+      bottom: auto;// Position of scroll component
+    
+
+}
+
+
+#examples{
+	padding: 5px;
+	margin: 10px 0;
+	overflow: hidden; 
+}
+
+#examples > hr{ margin: 20px 10px; }
+
+.content{
+	overflow: auto;
+	position: relative;
+	padding: 20px;
+	background: white;    //scroll background color
+	margin: 10px;
+	width: 740px;
+	max-width: 97%;
+	height: 400px;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}
+
+.content.hidden{ display: none; }
+
+.content.light{
+	background-color: #ddd;
+	color: white;
+}
+
+
+
+.content.light hr{
+	border-bottom: 1px solid rgba(255,255,255,0.6);
+	border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.content p{ margin: 30px 0; }
+
+.content p:last-child{ margin-bottom: 5px; }
+
+.content p:nth-child(odd), .content.light p:nth-child(odd){
+	background: #444;
+	background: rgba(255,255,255,0.1);
+	padding: 5px 10px;
+	-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+}
+
+.content p:nth-child(3n+3){
+	color: #bbb;
+	background: none;
+	padding: 0;
+}
+
+.content.light p:nth-child(odd){
+	background: #fff;
+	background: rgba(255,255,255,0.8);
+}
+
+.content.light p:nth-child(3n+3){ color: #666; }
+
+.content p.full:nth-child(odd), .content p.half:nth-child(odd), 
+.content p.full:nth-child(3n+3), .content p.half:nth-child(3n+3){
+	background: none;
+	padding: 0;
+}
+
+.content h2{
+	font-size: 200%;
+	line-height: 130%;
+}
+
+.content h2:first-child{ margin-top: 5px; }
+
+.content:nth-child(odd) h2{
+	font-family: "Oswald", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+hr + .content:nth-child(odd) h2{
+	font-family: "Lobster Two", "Georgia", serif;
+	font-weight: 700;
+	font-style: italic;
+}
+
+.content.light h2{ color: inherit; }
+
+.content img{
+	margin: 0;
+	-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+	padding: 3px;
+	background: rgba(0,0,0,0.2);
+}
+
+#demo.showcase{ min-width: 740px; }
+
+
+
+#examples.resizable{ 
+	background:#444; 
+	padding-bottom: 30px; 
+}
+
+#resizable.content{
+	overflow: hidden;
+	width: 640px;
+	max-width: 80%;
+	-webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; /* jquery ui resizable bug: http://bugs.jqueryui.com/ticket/8932 */
+}
+
+#resizable.content h2{ color: #444; }
+
+#resizable.content p{ width: 1000px }
+
+
+#examples.tabs, #examples.accordion, #examples.autocomplete{	
+	padding: 5px 20px 20px 20px;
+	background-color: #333;
+}
+
+#examples.tabs h3, #examples.accordion h3{
+	color: #222;
+	font-family: inherit;
+	font-style: inherit;
+}
+
+
+
+#examples.tabs .ui-widget-content{ background-image: none; }
+
+
+.bootstrap #examples{ background: transparent; }
+
+
+.transitions #examples{
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+}
+
+.transitions .content{
+	-webkit-transition: all .6s ease-out; 
+	-moz-transition: all .6s ease-out; 
+	-o-transition: all .6s ease-out; 
+	transition: all .6s ease-out; 
+}

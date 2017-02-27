@@ -1,0 +1,556 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie ie7 lte9 lte8 lte7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8 lte9 lte8" lang="en-US">	<![endif]-->
+<!--[if IE 9]><html class="ie ie9 lte9" lang="en-US"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="noIE" lang="en-US">
+    <!--<![endif]-->
+    <head>
+        <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+        <!-- meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="shortcut icon" href="assets/images/title.png" type="image/x-icon" /> 
+        <title>Paperplane</title>
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/ionicons.min.css">
+        <link rel="stylesheet" href="assets/css/owl.carousel.css">
+        <link rel="stylesheet" href="assets/css/owl.theme.css">
+        <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="css/navigationmenu.css">
+        <link rel="stylesheet" href="css/topplaces.css">
+
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML = Date().UTC(year, month, date);
+            }
+        </script>
+
+
+
+
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+                                    <script src="assets/js/html5shiv.js"></script>				<script src="assets/js/respond.js"></script>			<![endif]-->
+        <!--[if IE 8]>
+                            <script src="assets/js/selectivizr.js"></script>		    <![endif]-->
+    </head>
+    <body>
+        <form>
+
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed"
+
+                                                        data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+                            <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        <a class="navbar-brand" href="index.html" title="HOME"> 
+                            <img src="assets/images/logo.png" alt="logo" class="logo" width="68" height="68"> </a></div>
+                    <!-- /.navbar-header -->
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <div class="nav navbar-nav navbar-right">
+                            <span style="font-size:30px;cursor:pointer;  color: #00A2BD; font-weight: bolder;" onclick="openNavigation()">&#9776; </span>
+                            <div id="mySidenavigation" class="sidenavigation">
+                                <a href="javascript:void(0)" class="closebtn" onclick="closeNavigation()">&#x2715;</a>
+                                <a href="index.html">Home</a><br>
+                                <a href="services.html">Settings</a><br>
+                                <a href="#contact-us">Contact Us</a><br>
+                                <a href="login.html">Login/Sign Up</a><br><br>
+                                <a href="index.html" title="HOME"> 
+                                    <img src="assets/images/logo.png" alt="logo" class="logo" width="100" height="100"> </a>
+                            </div>
+
+                            <!--     <li><a href="contact.html">contact</a></li>-->
+                        </div>
+                        <!-- /.nav --> </div>
+                    <!-- /.navbar-collapse --> </div>
+                <!-- /.container --> </nav>
+            <!-- Home -->
+            <div id="header">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <!-- /.slider-item -->
+                        <li class="slider-item" style="background-image: url('assets/images/item-2.jpg')">
+                            <div class="intro">
+                                <div class="inner-intro">
+                                    <h1 class="header-title">hello , &lt;user&gt;</h1>
+                                    <p class="header-sub-title">Effortless planning, Plan a travel with just a few taps</p>
+                                    <button class="btn custom-btn"> <a href="#scroll-effect"> Plan</a></button> </div>
+                            </div>
+                        </li>
+                        <!-- /.slider-item -->
+                    </ul>
+                    <!-- /.slides --> </div>
+                <!-- /.flexslider --> </div>
+            <!-- /#header -->
+            <!-- Find a Tour -->
+            <section class="tour section-wrapper container" id="scroll-effect">
+                <h2 class="section-title"> </h2>
+                <br/>
+                <p class="section-subtitle"> Where would you like to go? </p>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <form>
+
+                            <input type="text"  size="50" id="searchTextField" class="form-control border-radius" placeholder="Enter a location" autocomplete ="on" required >
+
+                            </div>  
+                            <div class="col-md-3 col-sm-6">
+                                <div class="input-group"> 
+                                    <input class="form-control border-radius border-right"
+                                           type="date" id="StartDate">
+                                    <span class="input-group-addon border-radius custom-addon">
+                                    </span> 
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="input-group"> <input id="EndDate" class="form-control border-radius border-right"
+
+                                                                 type="date" required> <span class="input-group-addon border-radius custom-addon">
+                                    </span> </div>
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div id="Search" class="btn btn-default border-radius custom-button" onclick="window.location.href = 'itinerary.html'"> Search </div>
+                            </div>
+                    </div>
+            </section>
+        </form>
+        <!-- /.tour -->
+        <!-- http post request for the home page-->
+        <script>
+            var $searchTextField = $('#searchTextField');
+     var $StartDate = $('#StartDate');
+     var $EndDate = $('#EndDate');
+    
+
+     
+     $('#Search').on('click',function(){
+        var TravelInput = {
+           Place: $searchTextField.val(),
+            StartDate: $StartDate.val(),
+            EndDate: $EndTime.val()
+              
+        };
+       $.ajax({
+           type: 'post',
+           url:'some url',
+           data: TravelInput
+           });
+        
+     });
+        </script>
+
+
+
+        <!-- Top place to visit -->
+        <section class="visit section-wrapper">
+            <div class="container">
+                <h2 class="section-title"> Top place to visit </h2>
+
+                <div class="owl-carousel visit-carousel">
+                    
+                     <!-- place 1--> 
+         
+           <div class="card">
+  <div class="card-header">
+    
+      <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+      
+ <div class="card-block" >
+    <img src="images/Shanghai.jpg" alt="shanghai" style="width:100%;height:220px;">
+  </div>
+  </div>
+ 
+
+     
+    <p class="city">Shanghai</p>
+    <p id="date&time_1"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+
+</div>
+
+ 
+           <!--end of place 1-->
+         
+        <!--place 2-->
+                           <div class="card">
+  <div class="card-header">
+     
+  <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+
+       <div class="card-block">
+    <img src="images/Macau.jpg" alt="macau" style="width:100%;height:220px;">
+  </div>
+  </div>
+ 
+
+   <p class="city">Macau</p>
+    <p id="date&time_2"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+    </div>
+        <!--end of place 2-->
+        
+        <!-- place 3-->
+                                   <div class="card">
+  <div class="card-header">
+     
+   <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+      
+ <div class="card-block">
+    <img src="images/Bangkok.jpg" alt="bankok" style="width:100%;height:220px;">
+  </div>
+  </div>
+ 
+  <p class="city">Bangkok</p>
+    <p id="date&time_3"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+</div>
+        <!--end of place 3-->
+        
+        <!-- place 4-->
+                                   <div class="card">
+  <div class="card-header">
+     
+ <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+
+      <div class="card-block">
+    <img src="images/Paris.jpg" alt="paris" style="width:100%;height:220px;">
+  </div>
+  </div>
+  
+ <p class="city">Paris</p>
+    <p id="date&time_4"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+</div>
+        <!--end of place 4-->
+        
+        <!-- place 5-->
+                                   <div class="card">
+  <div class="card-header">
+     
+ <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+      
+<div class="card-block">
+    <img src="images/Sanfrancisco.jpg" alt="sanfrancisco" style="width:100%;height:220px;">
+  </div>
+  </div>
+  
+ <p class="city">San Francisco</p>
+    <p id="date&time_5"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+</div>
+        <!--end of place 5-->
+        
+        <!-- place 6-->
+                                   <div class="card">
+  <div class="card-header">
+     
+ <div class="dropdown" style="float:right;" id="fix">
+  <button class="dropbtn"><b>&#9776;</b></button>
+  <div class="dropdown-content">
+    <a href="#">Update</a>
+    <a href="#">Delete</a>   
+  </div>
+</div>
+<div class="card-block">
+    <img src="images/Hongkong.jpg" alt="hongkong" style="width:100%;height:220px;">
+  </div>
+  </div>
+  
+ <p class="city">Hongkong</p>
+    <p id="date&time_6"></p>
+    <table>
+        <tr>
+    <td><img src="images/fb.png" alt="Facebook" style="width:30px;height:30px;"></td>
+    <td> <img src="images/twitter.png" alt="Twitter" style="width:30px;height:30px;"></td>
+    <td><img src="images/g+.png" alt="G plus" style="width:30px;height:30px;"></td>
+  </tr>
+    </table>
+</div>
+        <!--end of place 6-->
+        
+     </div>   
+        <script src="js/topplaces.js"></script>
+           
+        
+        </div>
+                    
+
+            <!-- /.container --> </section>
+        <!-- /.visit -->
+        <!-- /.container -->
+        <!-- /.offer-cta -->
+        <section class="additional-services section-wrapper">
+            <!-- /.row --> 
+            <!-- /.container --> </section>
+        <!-- /.Additional-services -->
+        <div class="section-wrapper sponsor">
+            <div class="container">
+                <div class="owl-carousel sponsor-carousel">
+                    <div class="item"> <a href="#"> <img src="assets/images/vamsi.jpg" class="img-circle img-responsive" alt="Placeholder image"> </a> </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p>He is the primary contact for our team in building the website. He actively participates in designing the homepage of our website.He loves travelling</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div>
+                    <div class="item col-md-10"> <a href="#"> <img src="assets/images/rajkiran.jpg" class="img-circle img-responsive" alt="Placeholder image"> </a> </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p>He is responsible for communications management and documentation</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div>
+                    <div class="item col-md-10"> <a href="#"> <img src="assets/images/himateja.jpg" class="img-circle img-responsive" alt="Placeholder image"> </a> </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+
+                                <div class="caption">
+                                    <p>He is good at collecting requirements and managing them</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div>
+                    <img src="assets/images/adarsh.jpeg" class="img-circle img-responsive" alt="Placeholder image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p>He deals with quality and testing management</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div>
+                    <img src="assets/images/teja.jpg" class="img-circle img-responsive" alt="Placeholder image">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p>He effectively communicates with client and collects his inputs </p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div>
+                    <img src="assets/images/sumanth.jpg" class="img-circle img-responsive" alt="Placeholder image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    <p>He deals with issue management</p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item"> <a href="#">  </a> </div> 
+                </div>
+
+                <!-- /.owl-carousel --> </div>
+            <!-- /.container --> </div>
+        <!-- /.sponsor -->
+
+
+
+        <div class="subscribe section-wrapper"> <a class="brand-logo" href="index.html"
+
+                                                   title="HOME"> <img src="assets/images/logo.png" alt="logo" class="logo" width="100" height=100></a>
+
+
+            <form>
+                <p class="subscribe-now"> Subscribe to our Newsletter </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+                            <div class="input-group"> <input class="form-control border-radius"
+
+                                                             placeholder="Email address" type="email"  required> <span class="input-group-btn">
+                                    <button class="btn btn-default border-radius custom-sub-btn" type="button">DONE</button>
+                                    </form>
+
+                                </span> </div>
+
+
+                            <!-- /input-group --> </div>
+
+                    </div>
+                </div>
+
+                <ul class="social-icon">
+                    <li><br>
+                    </li>
+                    <li><br>
+                    </li>
+                    <li><br>
+                    </li>
+                    <li><br>
+                    </li>
+                </ul>
+                <form>
+                    <section class="section-wrapper contact-and-map" id="contact-us"> <br/><br/>
+                        <div class="container">
+                            <div class="row"> <!-- /.col-sm-6 -->
+                                <div class="col-sm-6">
+                                    <h2 class="section-title"> Send Message </h2>
+                                    <div class="form">
+                                        <div class="input-group">
+                                            <input class="form-control border-radius border-right" type="text" placeholder="Name" required>
+                                            <span class="input-group-addon  border-radius custom-addon"> <i class="ion-person"></i></span></div>
+                                        <div class="input-group">
+                                            <input class="form-control border-radius border-right" name="email" type="email" placeholder="Email address"required>
+                                            <span class="input-group-addon  border-radius custom-addon"> <i class="ion-email"></i></span></div>
+                                        <div class="input-group">
+                                            <input class="form-control border-radius border-right" type="tel" placeholder="Phone number"required >
+                                            <span class="input-group-addon  border-radius custom-addon"> <i class="ion-ios-telephone"></i></span></div>
+                                        <div class="input-group">
+                                            <textarea name="textarea" rows="8" class="form-control border-radius border-right" placeholder="Write Message" required ></textarea>
+                                            <!-- <input type="text" name="text" rows="8" class="form-control border-radius border-right message" placeholder="Write Message"> -->
+                                            <span class="input-group-addon border-radius custom-addon"> <i class="ion-chatbubbles"></i></span></div>
+                                        <button type="submit" class="btn btn-default border-radius custom-button">SEND MESSAGE </button>
+                                    </div>
+                                </div>
+                                </form>
+                                <div class="col-sm-6">
+                                    <h2 class="section-title">Contact Information</h2>
+                                    <p>this is contact information</p>
+                                </div>
+
+                                <!-- /.col-sm-6 -->
+                            </div>
+                        </div>
+                    </section>
+                    </div>
+                    <!-- /.subscribe -->
+                    <footer>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <div class="text-left">© Copyright paperplane ©2016 </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </footer>
+                    <script src="assets/js/jquery-1.11.2.min.js"></script>
+                    <script src="assets/js/bootstrap.min.js"></script>
+                    <script src="assets/js/owl.carousel.min.js"></script>
+                    <script src="assets/js/contact.js"></script>
+                    <script src="assets/js/jquery.flexslider.js"></script>
+                    <script src="assets/js/script.js"></script>
+
+                    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDGE9hTvjwqVWRWy1WSHAXmqwRlXKvK2xw"></script>
+                    <script type="text/javascript">
+                                  function initialize() {
+                                      var options = {
+                                          types: ['(cities)'],
+                                          componentRestrictions: {}
+                                      };
+
+                                      var input = document.getElementById('searchTextField');
+                                      var autocomplete = new google.maps.places.Autocomplete(input, options);
+                    //      var input = document.getElementById('searchTextField');
+                    //      var options = {
+                    //  types: ['geocode'] //this should work !
+                    //};
+                    //var autocomplete = new google.maps.places.Autocomplete(input,options);
+                    //    var s =  document.getElementById('searchTextField').value;
+                    //    console.log(s);
+                    //      var autocomplete = new google.maps.places.Autocomplete(input);
+                                  }
+                                  google.maps.event.addDomListener(window, 'load', initialize);
+                    </script>
+
+                    <script>
+                        function openNavigation() {
+                            document.getElementById("mySidenavigation").style.width = "500px";
+                        }
+
+                        function closeNavigation() {
+                            document.getElementById("mySidenavigation").style.width = "0";
+                        }
+                    </script>
+                    </body>
+                    </html>

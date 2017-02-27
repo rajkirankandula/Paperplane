@@ -1,0 +1,21 @@
+[
+  {
+    "first_Name": "Krishna",
+    "last_Name": "Painuly",
+    "emailID": "krishnapainuly@gmail.com",
+    "password": "12345",
+    "appSecretKey": "krish",
+    "currency": "rupees",
+    "startTime": "07/12/2015",
+    "endTime": "08/12/2015",
+    "timeFormat": "Unix",
+    "musuem": "11",
+    "landmark": "55",
+    "shopping": "78",
+    "outDoorActivity": "99",
+    "traveller": "1",
+    "createdAt": "2016-09-28T19:27:02.453Z",
+    "updatedAt": "2016-09-28T19:27:02.453Z",
+    "id": "57ec1986137adc941d3c68e3"
+  }
+]

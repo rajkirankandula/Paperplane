@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="assets/images/title.png" type="image/x-icon" /> 
+    <title>Paperplane</title>
+
+ 
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/plan.css" rel="stylesheet">
+
+	<!-- stylesheet for demo and examples -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- custom scrollbar stylesheet -->
+	<link rel="stylesheet" href="jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script>
+jQuery(function(){
+   jQuery('#modal').click();
+});
+    </script>
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+
+
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default" style="color:white;">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#defaultNavbar1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="index.html">PAPERPLANE</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+     
+      <ul class="nav navbar-nav navbar-right">
+     <!--   <li><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li> -->
+        <li><a href="index.html">Home</a></li>
+      </ul>
+      
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+
+
+<div id="map" style="width: 100%;height:560px;"></div>
+<p  id="modal" onclick="openNav()"></p>
+<!--<button type="button"  id="modal" onclick="openNav()"></button>-->
+<!-- /plan --> 
+<div id="myNav" class="overlay1">
+  
+  <div class="overlay-content">
+  <!--   <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a> -->
+
+    <!-- ----------------------------------------------------- -->
+    <!-- Scroll bar -->
+    
+    <div id="demo">
+		<section id="examples">
+			
+			<!-- content -->
+			<div class="content">
+                             <!--  media object -->
+                             
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"></h4>
+      <p class="descr"></p>
+    </div>
+  </div>
+                                 
+								 
+  <hr >
+  <script type="text/javascript">
+ var flickerAPI = "https://api.myjson.com/bins/474qc";
+ $.getJSON( flickerAPI, function(json){
+ 
+<!-- var i = 0, dataSize = json.results[0].length, html = '';
+<!--for(i; i < dataSize; i++){ -->
+
+     var planDays = json.results[0].planDays;
+	 var planDayIndex = planDays[0].planDayIndex;
+     console.log('Address : ', planDayIndex);
+	 var details = planDays[0].details;
+	 var placedetail = details[0].placeDetail;
+	 var name = placedetail.name
+	 console.log('name : ', name);
+	 
+	 // Latitude and longitude parsing (IGNORE - Just for testing)
+	 var destination = json.results[0].destination;
+	 var geometry = destination.geometry;
+	 var latitude1 = geometry.location.lat;
+	 var longitude1 = geometry.location.lng;
+	 console.log('latitude : ', latitude1);
+	 console.log('longitude : ', longitude1);
+	 
+	 
+	// Hong kong disney island coordinates
+	
+	 var latitude2 = placedetail.geometry.location.lat;
+	 var longitude2 = placedetail.geometry.location.lng;
+	 console.log('latitude : ', latitude2);
+	 console.log('longitude : ', longitude2);
+	 //var longitude = json.results[0].longitude;
+	 
+	 
+	 // Nam Sang Wai coordinates
+	 
+	 var placedetail2 = details[1].placeDetail;
+     var latitude3 = placedetail2.geometry.location.lat;
+	 var longitude3 = placedetail2.geometry.location.lng;
+	 console.log('latitude : ', latitude3);
+	 console.log('longitude : ', longitude3);
+	 
+		
+		
+		// University of Hong Kong
+	 
+	 var placedetail3 = details[2].placeDetail;
+     var latitude4 = placedetail3.geometry.location.lat;
+	 var longitude4 = placedetail3.geometry.location.lng;
+	 console.log('latitude : ', latitude4);
+	 console.log('longitude : ', longitude4);
+		
+	 var planDays = json.results[0].planDays;
+	 var planDayIndex2 = planDays[1].planDayIndex;
+     console.log('Address : ', planDayIndex2);
+     var details2 = planDays[0].details;
+	 var placedetail2 = details2[1].placeDetail;
+	 var name2 = placedetail2.name
+		
+		
+		
+	 var planDays = json.results[0].planDays;
+	 var planDayIndex3 = planDays[1].planDayIndex;
+     console.log('Address : ', planDayIndex2);
+	var details3 = planDays[0].details;
+	 var placedetail3 = details3[2].placeDetail;
+	 var name3 = placedetail3.name
+		
+       
+       $('.media-heading').append('<h3> Day: '+planDayIndex+'  Wednesday November 23</h3>');
+		$('.descr').append('<h3>'+name+'<div></div></h3>');
+		
+		 
+		  $('.media-heading1').append('<h3> Day :'+planDayIndex2+'  Thursday November 24</h3>');
+		  $('.descr1').append('<h3>'+name2+'<div></div></h3>');
+		
+		//$('.media-heading1').append('<h3> Day :'+planDayIndex1+" "+dayOfWeek1+" "+arrivalDate1+'</h3>');
+		//$('.descr1').append('<h3>'+formattedAddress1+" <div></div>"+duration1+'</h3>');
+		
+		
+		 $('.media-heading2').append('<h3> Day :'+planDayIndex3+' Thursday November 24</h3>');
+		  $('.descr2').append('<h3>'+name3+'<div></div></h3>');
+		//$('.media-heading2').append('<h3> Day :'+planDayIndex2+" "+dayOfWeek2+" "+arrivalDate2+'</h3>');
+		//$('.descr2').append('<h3>'+formattedAddress2+" <div></div>"+duration2+'</h3>'); 
+ });
+ 
+</script>
+
+  <!--++++ MODAL ++++----->
+    <!-- Modal --->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content--->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Title</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some Description</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!--++++ MODAL END++++----->
+  
+  
+  
+  <!-- <!-- object in scroll box -->
+  
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading1"></h4>
+      <p class="descr1"></p>
+    </div>
+  </div>
+  <hr >
+  <!-- object in scroll box end  -->
+  
+  <div class="media">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading2"></h4>
+      <p class="descr2"></p>
+    </div>
+  </div>
+  <hr >
+				
+ <!--<div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr >
+  
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr >
+  
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr >
+  
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr >
+  
+  <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr > 
+  
+   <div class="media" data-toggle="modal" data-target="#myModal">
+    <div class="media-left">
+      <img src="map.png" class="media-object" style="width:100px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Title</h4>
+      <p>Some description</p>
+    </div>
+  </div>
+  <hr > -->
+			
+			</div>
+			
+		</section>
+	</div>
+	
+	
+	
+	<!-- Google CDN jQuery with fallback to local -->
+	
+	<script>window.jQuery || document.write('<script src="jquery-1.11.0.min.js"><\/script>')</script>
+	
+	<!-- custom scrollbar plugin -->
+	<script src="jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script>
+		(function($){
+			$(window).on("load",function(){
+				
+				/* all available option parameters with their default values */
+				$(".content").mCustomScrollbar({
+					setWidth:false,
+					setHeight:false,
+					setTop:0,
+					setLeft:0,
+					axis:"y",
+					scrollbarPosition:"inside",
+					scrollInertia:950,
+					autoDraggerLength:true,
+					autoHideScrollbar:false,
+					autoExpandScrollbar:false,
+					alwaysShowScrollbar:0,
+					snapAmount:null,
+					snapOffset:0,
+					mouseWheel:{
+						enable:true,
+						scrollAmount:"auto",
+						axis:"y",
+						preventDefault:false,
+						deltaFactor:"auto",
+						normalizeDelta:false,
+						invert:false,
+						disableOver:["select","option","keygen","datalist","textarea"]
+					},
+					scrollButtons:{
+						enable:false,
+						scrollType:"stepless",
+						scrollAmount:"auto"
+					},
+					keyboard:{
+						enable:true,
+						scrollType:"stepless",
+						scrollAmount:"auto"
+					},
+					contentTouchScroll:25,
+					advanced:{
+						autoExpandHorizontalScroll:false,
+						autoScrollOnFocus:"input,textarea,select,button,datalist,keygen,a[tabindex],area,object,[contenteditable='true']",
+						updateOnContentResize:true,
+						updateOnImageLoad:true,
+						updateOnSelectorChange:false,
+						releaseDraggableSelectors:false
+					},
+					theme:"light",
+					callbacks:{
+						onInit:false,
+						onScrollStart:false,
+						onScroll:false,
+						onTotalScroll:false,
+						onTotalScrollBack:false,
+						whileScrolling:false,
+						onTotalScrollOffset:0,
+						onTotalScrollBackOffset:0,
+						alwaysTriggerOffsets:true,
+						onOverflowY:false,
+						onOverflowX:false,
+						onOverflowYNone:false,
+						onOverflowXNone:false
+					},
+					live:false,
+					liveSelector:null
+				});
+				
+			});
+		})(jQuery);
+	</script>
+    
+    <!-- Scroll Bar -->
+    <!-- ----------------------------------------------------- -->
+    
+    
+    
+    
+  </div>
+</div> 
+
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.height = "0%";
+}
+</script>
+
+<!-- /plan --> 
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+
+
+<!-- maps -->
+<script>
+      function initMap(latitude,longitude) {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: {lat: 22.3964, lng: 114.1095}  // Hongkong.
+        });
+//console.log('latitude : ', latitude);
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer({
+          draggable: true,
+          map: map,
+          panel: document.getElementById('right-panel')
+        });
+
+        directionsDisplay.addListener('directions_changed', function() {
+          computeTotalDistance(directionsDisplay.getDirections());
+        });
+
+        displayRoute('Hong Kong Disneyland Resort, HK', 'The University of Hong Kong, HK', directionsService,
+            directionsDisplay);
+      }
+
+     function displayRoute(origin, destination, service, display) {
+        service.route({
+          origin: origin,
+          destination: destination,
+          waypoints: [{location: 'Hong Kong Disneyland Resort, HK'},{location: 'Nam Sang Wai, HK'}, {location: 'The University of Hong Kong, HK'}],
+          travelMode: 'DRIVING',
+          avoidTolls: true
+        }, function(response, status) {
+          if (status === 'OK') {
+            display.setDirections(response);
+          } else {
+            alert('Could not display directions due to: ' + status);
+          }
+        });
+      }
+
+      function computeTotalDistance(result) {
+        var total = 0;
+        var myroute = result.routes[0];
+        for (var i = 0; i < myroute.legs.length; i++) {
+          total += myroute.legs[i].distance.value;
+        }
+        total = total / 1000;
+        document.getElementById('total').innerHTML = total + ' km';
+      }
+    </script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANM_W2vAK4dAUcpZYZxyr1cao3CJXT7uM&callback=initMap">
+    </script>
+</body>
+</html>
